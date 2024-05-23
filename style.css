@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+#banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(BB.jpg);
+    background-size: cover;
+    background-position: center;
+}
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 20;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom,#524242 , transparent);
+    z-index: 100;
+
+}
+#sec {
+    position: relative;
+    padding: 100px;
+    background: #7a4642;
+    z-index: 1;
+    width: 100%;
+    bottom: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;  
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#sec::after {
+    content: '';
+    position: absolute;
+    bottom: 120%; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+    pointer-events: none;
+    z-index: 2;
+}
+.sec .H
+{
+    font-size: 600px;
+    color: #7a4642;
+    font-weight: bold;
+}
+
+.sec-circle {
+    text-align: center;
+    margin: 20px;
+}
+
+.sec-circle h3 {
+    color: #fff;
+}
+
+.circles-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+}
+
+.circle1 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #df9f9b;
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 5px #f44336;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.wave1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #f44336;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+}
+
+.wave1::before,
+.wave1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #000;
+}
+
+.wave1::before {
+    border-radius: 45%;
+    background: rgba(255, 255, 255, 1);
+    animation: animate1 5s linear infinite;
+}
+
+.wave1::after {
+    border-radius: 40%;
+    background: rgba(255, 255, 255, 0.5);
+    animation: animate2 5s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translate(-50%, -65%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -65%) rotate(360deg);
+    }
+}
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;   
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+#logo {
+    width: 120px;
+    
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+#navbar ul li {
+    margin: 0 20px;
+    position: relative;
+    
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#navbar ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #551408;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.3s ease;
+    visibility: hidden;
+}
+
+#navbar ul li a:hover::after {
+    width: 100%;
+    visibility: visible;
+}
+
+#content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+
+}
+
+#content h1 {
+    font-size: 200px;
+    margin-top: 200px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+#buttonContainer {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+
+#content p {
+    margin: 20px auto;
+    font-weight: 600 ;
+    line-height: 56px;
+    font-size: larger;
+    font-style: italic;
+}
+#aboutUs , #ourGoal {
+    width: 100%;
+    position: relative;
+    background: #713a36;
+    text-align: center;
+    color: #0f0c0c;
+    box-sizing: border-box;
+    padding: 20px 0;
+    font-size: larger;
+    
+}
+
+#aboutUs h4 , #ourGoal h4 {
+    font-size: 1.75em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+
+#aboutUs p , #ourGoal p {
+    margin: 20px auto;
+    font-weight: 300;
+    color: #000;
+    line-height: 20px;
+    font-size: 20px;
+    font-style: italic;
+    width: 70%;
+}
+.Donor
+{
+    color: #7a4642
+
+}
+#LoadDonor button{
+    width: 200px;
+    padding: 20px 0;
+    text-align: center;
+    bottom: 70px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid #973333;
+    background-color: #7a4642;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+#donateButton button,
+#registerButton button,
+#bloodStockButton button {
+    width: 200px;
+    padding: 20px 0;
+    text-align: center;
+    bottom: 70px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid #973333;
+    background-color: #7a4642;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin: 0 10px;
+}
+
+#bloodStockButton button {
+    width: 250px;
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: medium;
+}
+
+#donateButton button:hover,
+#registerButton button:hover,
+#bloodStockButton button:hover {
+    background-color: #551408;
+    color: #fff;
+    border-color: #551408;
+    margin-top: 0%;
+
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    width: 29%;
+    left: 50%;
+    bottom: -25%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 20px;
+    border: 3px solid rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+    z-index: 9;
+}
+
+.form-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    bottom: 40px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 2px;
+    backface-visibility: initial;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.75); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    display:contents;   
+}
+
+.form-container label {
+    margin-bottom: 10px;
+    width: 60%px;
+    display: block;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.form-container button[type="submit"],
+.form-container button.cancel {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.cancel {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    
+}
+footer {
+    
+    padding: 10px;
+    background-color: #d69393;
+    text-align: center;
+    font-size: medium;
+    background: linear-gradient(to bottom,#524242 , transparent);
+
+}
+
+
+
+#i1 {
+      margin-left: 20px;
+      size: 10px;
+}
+
